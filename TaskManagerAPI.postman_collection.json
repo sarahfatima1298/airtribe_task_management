@@ -1,0 +1,140 @@
+{
+  "info": {
+    "_postman_id": "b2f8301f-432b-4e2d-9314-45e46db94715",
+    "name": "TaskManager API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User - Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"john_doe\", \"password\": \"password123\", \"email\": \"john@example.com\"}"
+        },
+        "url": { "raw": "http://localhost:8082/api/users", "host": ["localhost"], "port": "8082", "path": ["api", "users"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "User - Get User by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8082/api/users/:id", "host": ["localhost"], "port": "8082", "path": ["api", "users", ":id"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "User - Get All Users",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8082/api/users", "host": ["localhost"], "port": "8082", "path": ["api", "users"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "User - Update User",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"john_doe_updated\", \"password\": \"newpassword123\", \"email\": \"john_updated@example.com\"}"
+        },
+        "url": { "raw": "http://localhost:8082/api/users/:id", "host": ["localhost"], "port": "8082", "path": ["api", "users", ":id"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "User - Delete User",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "http://localhost:8082/api/users/:id", "host": ["localhost"], "port": "8082", "path": ["api", "users", ":id"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "Task - Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"Complete Project\", \"description\": \"Finish the project by end of week\", \"dueDate\": \"2024-10-31\", \"completed\": false, \"user\": {\"id\": 1}}"
+        },
+        "url": { "raw": "http://localhost:8082/api/tasks", "host": ["localhost"], "port": "8082", "path": ["api", "tasks"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "Task - Get Task by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8082/api/tasks/:id", "host": ["localhost"], "port": "8082", "path": ["api", "tasks", ":id"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "Task - Get All Tasks",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8082/api/tasks", "host": ["localhost"], "port": "8082", "path": ["api", "tasks"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "Team - Create Team",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Development Team\"}"
+        },
+        "url": { "raw": "http://localhost:8082/api/teams", "host": ["localhost"], "port": "8082", "path": ["api", "teams"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "Team - Get Team by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8082/api/teams/:id", "host": ["localhost"], "port": "8082", "path": ["api", "teams", ":id"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "Project - Create Project",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Task Management System\", \"description\": \"A project for managing tasks\", \"team\": {\"id\": 1}}"
+        },
+        "url": { "raw": "http://localhost:8082/api/projects", "host": ["localhost"], "port": "8082", "path": ["api", "projects"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    },
+    {
+      "name": "Project - Get Project by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8082/api/projects/:id", "host": ["localhost"], "port": "8082", "path": ["api", "projects", ":id"] },
+        "auth": { "type": "basic", "basic": [{ "key": "username", "value": "user" }, { "key": "password", "value": "password" }] }
+      }
+    }
+  ]
+}
